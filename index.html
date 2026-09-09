@@ -11,6 +11,80 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="aerial-assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="aerial-assets/css/noscript.css" /></noscript>
+		<style>
+			#overlay {
+				opacity: 0.4 !important;
+			}
+			#bg {
+				background-repeat: no-repeat !important;
+				background-size: cover !important;
+				background-position: center center !important;
+				width: 100vw !important;
+				height: 100vh !important;
+				animation: gentlePan 10s ease-in-out infinite alternate !important;
+			}
+
+			@keyframes gentlePan {
+				0% { transform: scale(1.15) translateX(-3%); }
+				100% { transform: scale(1.15) translateX(3%); }
+			}
+
+			.button-29 {
+				align-items: center;
+				appearance: none;
+				background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+				border: 0;
+				border-radius: 6px;
+				box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+				box-sizing: border-box;
+				color: #fff !important;
+				cursor: pointer;
+				display: inline-flex;
+				font-family: "JetBrains Mono",monospace;
+				height: 48px;
+				justify-content: center;
+				line-height: 1;
+				list-style: none;
+				overflow: hidden;
+				padding-left: 16px;
+				padding-right: 16px;
+				position: relative;
+				text-align: left;
+				text-decoration: none;
+				transition: box-shadow .15s,transform .15s;
+				user-select: none;
+				-webkit-user-select: none;
+				touch-action: manipulation;
+				white-space: nowrap;
+				will-change: box-shadow,transform;
+				font-size: 18px;
+				}
+
+				.button-29:focus {
+				box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+				}
+
+				.button-29:hover {
+				box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+				transform: translateY(-2px);
+				color: #fff !important;
+				}
+
+				.button-29:active {
+				box-shadow: #3c4fe0 0 3px 7px inset;
+				transform: translateY(2px);
+				}
+
+				#main, #header, #footer {
+					animation-delay: 0.2s !important;
+					animation-duration: 0.8s !important;
+				}
+
+				#header nav ul li, .icons li {
+					animation-delay: 0.7s !important;
+					animation-duration: 0.8s !important;
+				}
+		</style>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -24,19 +98,19 @@
 						<p>BSc Computer Science Student &nbsp;&bull;&nbsp; University of Nottingham</p>
 						<nav>
 							<ul>
-								<li><a href="https://github.com/alifarag-uk" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                                <li><a href="https://www.linkedin.com/in/alifaraguk/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/alifarag-uk" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+                                <li><a href="https://www.linkedin.com/in/alifaraguk/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
                                 <li><a href="mailto:alifarag7522@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
 						</nav>
 						<div style="margin-top: 2rem;">
-                            <a href="projects.html" class="button">See My Work</a>
+                            <a href="projects.html" class="button-29 floating-return" >See my Work</a>
                         </div>
 					</header>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; Ali Farag. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+						<span class="copyright">&copy; Ali Farag. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>.</span>
 					</footer>
 
 			</div>
