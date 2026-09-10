@@ -18,6 +18,10 @@
 			left: 0px; 
 			z-index: 100;
 		}
+
+		#main {
+            padding-top: 1rem !important;
+        }
 		
 		.button.custom-btn {
 			background-color: transparent !important;
@@ -34,14 +38,42 @@
 			opacity: 0.7; 
 		}
 
+		.sidebar-subtitle {
+			font-size: 0.90em; 
+			line-height: 1.5;
+			display: block;
+			margin-top: 10px;
+		}
+
 		@media screen and (min-width: 981px) {
+			body {
+                background-attachment: fixed !important;
+                background-size: 20% 100vh !important;
+                background-position: top left !important;
+				background-repeat: no-repeat !important;
+            }
+			
             #header {
-                padding-top: 8rem !important; 
+				position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                height: 100vh !important;
+                /* If the screen is short (like landscape), use smaller padding so it fits */
+                padding-top: clamp(2rem, 15vh, 15rem) !important; 
+                width: 20% !important; 
+                padding-left: 1.5rem !important; 
+                padding-right: 1.5rem !important;
+                background-size: cover !important;
+                overflow-y: auto !important; /* Allows scrolling inside sidebar if window is extremely short */
+            }
+
+            #main {
+                margin-left: 25% !important; 
             }
 
             #footer .icons {
                 position: fixed !important;
-                bottom: 50px !important;
+                bottom: 80px !important;
                 left: 20px !important;
                 transform: none !important;
                 margin: 0 !important;
@@ -56,7 +88,7 @@
                 margin: 0 !important;
             }
         }
-		
+
 		.sidebar-subtitle {
 			font-size: 0.90em; 
 			line-height: 1.5;
@@ -76,6 +108,12 @@
 						BSc Computer Science Undergraduate<br />
 						University of Nottingham
 					</span>
+					<ul class="icons">
+						<br />
+						<li><a href="https://github.com/alifarag-uk" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/alifaraguk/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="mailto:alifarag7522@gmail.com" class="icon solid fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+					</ul>
 					<br />
 				</div>
 			</header>
@@ -88,18 +126,14 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Ipsum lorem dolor aliquam ante commodo<br />
-							magna sed accumsan arcu neque.</h2>
+							<h2>About Me</h2>
 						</header>
-						<p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
+						<p>I am a highly motivated and adaptable Computer Science student, bringing strong collaboration and problem-solving skills. I am actively pursuing expertise in Cybersecurity and AI, with enthusiasm for both fields. Currently, I am developing programming skills and a solid understanding of systems, while acquiring in-progress external certifications in AI, Cybersecurity, Machine Learning, and Cloud Computing through IBM</p>
 					</section>
 
 				<!-- Two -->
 					<section id="two">
-						<h2>Recent Work</h2>
+						<h2>Academic and Applied Work</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
@@ -498,11 +532,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/alifarag-uk" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
-                                <li><a href="https://www.linkedin.com/in/alifaraguk/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-                                <li><a href="mailto:alifarag7522@gmail.com" class="icon solid fa-envelope" target="_blank"><span class="label">Email</span></a></li>
-					</ul>
+					
 					<ul class="copyright">
 						<li>&copy; Ali Farag</li><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
 					</ul>
