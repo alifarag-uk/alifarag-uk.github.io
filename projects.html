@@ -10,234 +10,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
 
-		<style>
-    	.floating-return {
-			position: fixed;
-			top: 10px;
-			left: 0px; 
-			z-index: 100;
-		}
-
-		#main {
-            padding-top: 1rem !important;
-        }
 		
-		.button.custom-btn {
-			background-color: transparent !important;
-			border: 2px solid transparent !important;
-			box-shadow: none !important;
-			color: #ffffff !important; 
-		}
-
-		.button.custom-btn:hover {
-			background-color: transparent !important; 
-			border: 2px solid transparent !important;
-			box-shadow: none !important;
-			color: #ffffff !important; 
-			opacity: 0.7; 
-		}
-
-		.sidebar-subtitle {
-			font-size: 0.90em; 
-			line-height: 1.5;
-			display: block;
-			margin-top: 10px;
-		}
-
-		@media screen and (min-width: 981px) {
-			body {
-                background-attachment: fixed !important;
-                background-size: 20% 100vh !important;
-                background-position: top left !important;
-				background-repeat: no-repeat !important;
-            }
-			
-            #header {
-				position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                height: 100vh !important;
-                /* If the screen is short (like landscape), use smaller padding so it fits */
-                padding-top: clamp(2rem, 15vh, 15rem) !important; 
-                width: 20% !important; 
-                padding-left: 1.5rem !important; 
-                padding-right: 1.5rem !important;
-                background-size: cover !important;
-                overflow-y: auto !important; /* Allows scrolling inside sidebar if window is extremely short */
-            }
-
-            #main {
-                margin-left: 25% !important; 
-            }
-
-            #footer .icons {
-                position: fixed !important;
-                bottom: 80px !important;
-                left: 20px !important;
-                transform: none !important;
-                margin: 0 !important;
-                text-align: left !important;
-            }
-
-            #footer .copyright {
-                position: fixed !important;
-                bottom: 10px !important;
-                left: 20px !important;
-                text-align: left !important;
-                margin: 0 !important;
-            }
-        }
-
-		.sidebar-subtitle {
-			font-size: 0.90em; 
-			line-height: 1.5;
-			display: block;
-			margin-top: 10px;
-		}
-
-		/* Project Tags */
-        .project-tags {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0.5rem 0 1rem 0 !important;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .project-tags li {
-            background-color: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            padding: 0.2rem 0.6rem;
-            font-size: 0.75rem;
-            border-radius: 4px;
-            font-family: "JetBrains Mono", monospace;
-        }
-
-        /* Custom Floating Windows */
-        .custom-modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.85);
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .modal-content {
-            background-color: #2b2b2b;
-            color: #ffffff;
-            padding: 3rem 4rem;
-            border-radius: 8px;
-            max-width: 1000px; /* Increased to make it wider */
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-        }
-
-		/* Hide scrollbar for Chrome, Safari, and newer Edge */
-        .modal-content::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Hide scrollbar for Firefox and older Edge/IE */
-        .modal-content {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-
-		/* Alternating Project Layout */
-        .project-split {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-split.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .project-split .image-box, 
-        .project-split .text-box {
-            flex: 1; /* Ensures text and image take up exactly 50% each */
-        }
-
-        .project-split img {
-            width: 100%;
-            border-radius: 8px;
-            display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        /* Stack normally on mobile screens */
-        @media screen and (max-width: 768px) {
-            .project-split, .project-split.reverse {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            color: #aaaaaa;
-            font-size: 32px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .close-btn:hover {
-            color: #ffffff;
-        }
-
-        /* Navigation Arrows */
-        .nav-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 40px;
-            color: #aaaaaa;
-            cursor: pointer;
-            user-select: none;
-            padding: 10px;
-            z-index: 10;
-        }
-
-        .nav-arrow:hover {
-            color: #ffffff;
-        }
-
-        .left-arrow { left: 10px; }
-        .right-arrow { right: 10px; }
-
-        @media screen and (max-width: 768px) {
-            .modal-content { padding: 3rem 1.5rem; }
-            .left-arrow { left: 0px; }
-            .right-arrow { right: 0px; }
-        }
-
-		/* Custom Thumbnail Hover */
-        .custom-thumb {
-            cursor: pointer;
-            transition: opacity 0.2s ease-in-out;
-        }
-        .custom-thumb:hover {
-            opacity: 0.6;
-        }
-
-		</style>
 	</head>
 	<body class="is-preload">
 
@@ -376,7 +152,9 @@
                             <div class="text-box">
                                 <h3>Java MVC Reversi Game</h3>
                                 <ul class="project-tags">
-                                    <li>Java</li><li>JUnit</li><li>MVC Architecture</li>
+                                    <li><i class="devicon-java-plain" style="color: #f89820;"></i> Java</li>
+                                    <li><i class="icon solid fa-flask" style="color: #4CAF50;"></i> JUnit</li>
+                                    <li><i class="icon solid fa-cubes" style="color: #00bcd4;"></i> MVC Architecture</li>
                                 </ul>
                                 <p>I developed a fully functional Reversi game using the Model-View-Controller architecture. A major focus of this build was test-driven development, where I achieved 90.7% JUnit test coverage to ensure logic reliability and robustness[cite: 1].</p>
                             </div>
@@ -392,7 +170,10 @@
                             <div class="text-box">
                                 <h3>Full-Stack Web Application</h3>
                                 <ul class="project-tags">
-                                    <li>HTML/CSS</li><li>JavaScript</li><li>Supabase</li><li>Agile</li>
+                                    <li><i class="icon brands fa-html5" style="color: #e34c26;"></i> HTML/CSS</li>
+                                    <li><i class="icon brands fa-js" style="color: #f7df1e;"></i> JavaScript</li>
+                                    <li><i class="devicon-supabase-plain" style="color: #3fcf8e;"></i> Supabase</li>
+                                    <li><i class="icon solid fa-users" style="color: #2196F3;"></i> Agile</li>
                                 </ul>
                                 <p>This project involved building a responsive web interface linked to a cloud SQL database[cite: 1]. I applied Agile Scrum methodologies throughout the development lifecycle to manage features and requirements, alongside establishing CI/CD pipelines for quality control[cite: 1].</p>
                             </div>
@@ -786,38 +567,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-                const modals = ['modal-software', 'modal-lowlevel', 'modal-network', 'modal-algo'];
-                let currentModalIndex = 0;
-
-                function openModal(modalId) {
-                    currentModalIndex = modals.indexOf(modalId);
-                    document.getElementById(modalId).style.display = 'flex';
-                    document.body.style.overflow = 'hidden'; // Prevents background scrolling
-                }
-
-                function closeModal(modalId) {
-                    document.getElementById(modalId).style.display = 'none';
-                    document.body.style.overflow = 'auto'; // Restores background scrolling
-                }
-
-                function changeModal(direction) {
-                    closeModal(modals[currentModalIndex]);
-                    currentModalIndex += direction;
-                    
-                    if (currentModalIndex < 0) currentModalIndex = modals.length - 1;
-                    if (currentModalIndex >= modals.length) currentModalIndex = 0;
-                    
-                    openModal(modals[currentModalIndex]);
-                }
-
-                // Close modal when clicking the dark background outside the content box
-                window.onclick = function(event) {
-                    if (event.target.classList.contains('custom-modal')) {
-                        closeModal(modals[currentModalIndex]);
-                    }
-                }
-            </script>
+			<script src="assets/js/custom.js"></script>
 
 	</body>
 </html>
