@@ -96,6 +96,147 @@
 			margin-top: 10px;
 		}
 
+		/* Project Tags */
+        .project-tags {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0.5rem 0 1rem 0 !important;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tags li {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        /* Custom Floating Windows */
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.85);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background-color: #2b2b2b;
+            color: #ffffff;
+            padding: 3rem 4rem;
+            border-radius: 8px;
+            max-width: 1000px; /* Increased to make it wider */
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+
+		/* Hide scrollbar for Chrome, Safari, and newer Edge */
+        .modal-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for Firefox and older Edge/IE */
+        .modal-content {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+		/* Alternating Project Layout */
+        .project-split {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-split.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .project-split .image-box, 
+        .project-split .text-box {
+            flex: 1; /* Ensures text and image take up exactly 50% each */
+        }
+
+        .project-split img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Stack normally on mobile screens */
+        @media screen and (max-width: 768px) {
+            .project-split, .project-split.reverse {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: #aaaaaa;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .close-btn:hover {
+            color: #ffffff;
+        }
+
+        /* Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            color: #aaaaaa;
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .nav-arrow:hover {
+            color: #ffffff;
+        }
+
+        .left-arrow { left: 10px; }
+        .right-arrow { right: 10px; }
+
+        @media screen and (max-width: 768px) {
+            .modal-content { padding: 3rem 1.5rem; }
+            .left-arrow { left: 0px; }
+            .right-arrow { right: 0px; }
+        }
+
+		/* Custom Thumbnail Hover */
+        .custom-thumb {
+            cursor: pointer;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .custom-thumb:hover {
+            opacity: 0.6;
+        }
+
 		</style>
 	</head>
 	<body class="is-preload">
@@ -132,44 +273,50 @@
 					</section>
 
 				<!-- Two -->
-					<section id="two">
-						<h2>Academic and Applied Work</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>Magna sed consequat tempus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
-					</section>
+					<!-- Two -->
+                    <!-- Two -->
+                    <section id="two">
+                        <h2>Academic and Applied Work</h2>
+                        <div class="row">
+                            
+                            <article class="col-6 col-12-xsmall work-item">
+                                <div onclick="openModal('modal-software')" class="image fit custom-thumb"><img src="images/thumbs/01.jpg" alt="" /></div>
+                                <h3>Software Engineering and DevOps</h3>
+                                <ul class="project-tags">
+                                    <li>Java</li><li>SQL</li><li>CI/CD</li><li>Agile</li>
+                                </ul>
+                                <p>Full-Stack applications, CI/CD pipelines, and rigorous testing frameworks.</p>
+                            </article>
+                            
+                            <article class="col-6 col-12-xsmall work-item">
+                                <div onclick="openModal('modal-lowlevel')" class="image fit custom-thumb"><img src="images/thumbs/02.jpg" alt="" /></div>
+                                <h3>Low-Level Systems</h3>
+                                <ul class="project-tags">
+                                    <li>C</li><li>ARM Assembly</li><li>HDL</li>
+                                </ul>
+                                <p>CPU architecture design, assembly subroutines, and memory management.</p>
+                            </article>
+                            
+                            <article class="col-6 col-12-xsmall work-item">
+                                <div onclick="openModal('modal-network')" class="image fit custom-thumb"><img src="images/thumbs/03.jpg" alt="" /></div>
+                                <h3>Networks & Distributed Systems</h3>
+                                <ul class="project-tags">
+                                    <li>C</li><li>TCP/IP</li><li>Sockets</li>
+                                </ul>
+                                <p>Protocol implementation, client-server architectures, and HTTP routing.</p>
+                            </article>
+                            
+                            <article class="col-6 col-12-xsmall work-item">
+                                <div onclick="openModal('modal-algo')" class="image fit custom-thumb"><img src="images/thumbs/04.jpg" alt="" /></div>
+                                <h3>Algorithms and AI</h3>
+                                <ul class="project-tags">
+                                    <li>Python</li><li>Data Structures</li><li>ML</li>
+                                </ul>
+                                <p>Machine learning models, search algorithms, and data parsing tools.</p>
+                            </article>
+
+                        </div>
+                    </section>
 
 				<!-- Three -->
 					<section id="three">
@@ -208,6 +355,99 @@
 							</div>
 						</div>
 					</section>
+
+				
+					<!-- Interactive Modals -->
+                <div id="modal-software" class="custom-modal">
+                    <span class="nav-arrow left-arrow" onclick="changeModal(-1)">&#10094;</span>
+                    <span class="nav-arrow right-arrow" onclick="changeModal(1)">&#10095;</span>
+                    
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('modal-software')">&times;</span>
+                        
+                        <!-- Category Header -->
+                        <h2 style="text-align: center;">Software Engineering and DevOps</h2>
+                        <p style="text-align: center;">This category highlights my ability to build robust applications and manage the complete software development lifecycle.</p>
+                        
+                        <hr style="border: 0; border-top: 1px solid #444; margin: 3rem 0;">
+                        
+                        <!-- Project 1: Text Left, Image Right -->
+                        <div class="project-split">
+                            <div class="text-box">
+                                <h3>Java MVC Reversi Game</h3>
+                                <ul class="project-tags">
+                                    <li>Java</li><li>JUnit</li><li>MVC Architecture</li>
+                                </ul>
+                                <p>I developed a fully functional Reversi game using the Model-View-Controller architecture. A major focus of this build was test-driven development, where I achieved 90.7% JUnit test coverage to ensure logic reliability and robustness[cite: 1].</p>
+                            </div>
+                            <div class="image-box">
+                                <img src="images/fulls/01.jpg" alt="Reversi Game Screenshot">
+                            </div>
+                        </div>
+                        
+                        <hr style="border: 0; border-top: 1px solid #444; margin: 3rem 0;">
+
+                        <!-- Project 2: Image Left, Text Right (using 'reverse' class) -->
+                        <div class="project-split reverse">
+                            <div class="text-box">
+                                <h3>Full-Stack Web Application</h3>
+                                <ul class="project-tags">
+                                    <li>HTML/CSS</li><li>JavaScript</li><li>Supabase</li><li>Agile</li>
+                                </ul>
+                                <p>This project involved building a responsive web interface linked to a cloud SQL database[cite: 1]. I applied Agile Scrum methodologies throughout the development lifecycle to manage features and requirements, alongside establishing CI/CD pipelines for quality control[cite: 1].</p>
+                            </div>
+                            <div class="image-box">
+                                <img src="images/fulls/02.jpg" alt="Web App Screenshot">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="modal-lowlevel" class="custom-modal">
+                    <span class="nav-arrow left-arrow" onclick="changeModal(-1)">&#10094;</span>
+                    <span class="nav-arrow right-arrow" onclick="changeModal(1)">&#10095;</span>
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('modal-lowlevel')">&times;</span>
+                        <h2>Low-Level Systems and Architecture</h2>
+                        <ul class="project-tags">
+                            <li>C</li><li>ARM Assembly</li><li>HDL</li><li>CPU Architecture</li>
+                        </ul>
+                        <p>This section proves my understanding of how computers operate at the hardware level. I designed a functional Arithmetic and Logic Unit based on the 6502 CPU using logic gates and a multiplexer-based ALUcore chip.</p>
+                        <p>I also wrote an ARM Instruction Decoder in C that uses complex bitwise operations to extract specific fields and decode raw 32-bit opcodes into assembly mnemonics. Additionally I implemented low-level algorithms like Insertion Sort and string manipulation entirely in ARM Assembly.</p>
+                        <a href="#" class="button small custom-btn" style="border: 2px solid #ffffff !important;">View Showcase on GitHub</a>
+                    </div>
+                </div>
+
+                <div id="modal-network" class="custom-modal">
+                    <span class="nav-arrow left-arrow" onclick="changeModal(-1)">&#10094;</span>
+                    <span class="nav-arrow right-arrow" onclick="changeModal(1)">&#10095;</span>
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('modal-network')">&times;</span>
+                        <h2>Networks and Distributed Systems</h2>
+                        <ul class="project-tags">
+                            <li>C</li><li>Berkeley Sockets</li><li>TCP/IP</li><li>Docker</li>
+                        </ul>
+                        <p>This work focuses on connecting systems securely and efficiently. My primary implementation is a TCP Client and Server written in C that supports the Quote of the Day protocol as defined in RFC 865.</p>
+                        <p>This project demonstrates my mastery of the operating system interface for network communication. The server handles incoming connections and manages persistent read loops seamlessly. I also have foundational experience deploying applications using Docker containers.</p>
+                        <a href="#" class="button small custom-btn" style="border: 2px solid #ffffff !important;">View Showcase on GitHub</a>
+                    </div>
+                </div>
+
+                <div id="modal-algo" class="custom-modal">
+                    <span class="nav-arrow left-arrow" onclick="changeModal(-1)">&#10094;</span>
+                    <span class="nav-arrow right-arrow" onclick="changeModal(1)">&#10095;</span>
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('modal-algo')">&times;</span>
+                        <h2>Algorithms and Artificial Intelligence</h2>
+                        <ul class="project-tags">
+                            <li>Python</li><li>C</li><li>Machine Learning</li><li>Data Structures</li>
+                        </ul>
+                        <p>This category covers my logical problem-solving and data manipulation skills. I developed a suite of algorithms in C including the Shunting Yard Algorithm for expression parsing and sorting algorithms for dynamically allocated Linked Lists.</p>
+                        <p>I built machine learning models using Python, Pandas, and Scikit-learn to compare Linear Regression and Random Forest techniques. I also created a C command-line tool for parsing CSV files and calculating standard deviations to mimic content performance tracking.</p>
+                        <a href="#" class="button small custom-btn" style="border: 2px solid #ffffff !important;">View Showcase on GitHub</a>
+                    </div>
+                </div>
 
 				<!-- Four -->
 				<!--
@@ -546,6 +786,38 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+                const modals = ['modal-software', 'modal-lowlevel', 'modal-network', 'modal-algo'];
+                let currentModalIndex = 0;
+
+                function openModal(modalId) {
+                    currentModalIndex = modals.indexOf(modalId);
+                    document.getElementById(modalId).style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Prevents background scrolling
+                }
+
+                function closeModal(modalId) {
+                    document.getElementById(modalId).style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Restores background scrolling
+                }
+
+                function changeModal(direction) {
+                    closeModal(modals[currentModalIndex]);
+                    currentModalIndex += direction;
+                    
+                    if (currentModalIndex < 0) currentModalIndex = modals.length - 1;
+                    if (currentModalIndex >= modals.length) currentModalIndex = 0;
+                    
+                    openModal(modals[currentModalIndex]);
+                }
+
+                // Close modal when clicking the dark background outside the content box
+                window.onclick = function(event) {
+                    if (event.target.classList.contains('custom-modal')) {
+                        closeModal(modals[currentModalIndex]);
+                    }
+                }
+            </script>
 
 	</body>
 </html>
