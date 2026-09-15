@@ -1,0 +1,236 @@
+.floating-return {
+    position: fixed;
+    top: 10px;
+    left: 0px; 
+    z-index: 100;
+}
+
+#main {
+    padding-top: 1rem !important;
+}
+
+.button.custom-btn {
+    background-color: transparent !important;
+    border: 2px solid transparent !important;
+    box-shadow: none !important;
+    color: #ffffff !important; 
+}
+
+.button.custom-btn:hover {
+    background-color: transparent !important; 
+    border: 2px solid transparent !important;
+    box-shadow: none !important;
+    color: #ffffff !important; 
+    opacity: 0.7; 
+}
+
+.sidebar-subtitle {
+    font-size: 0.90em; 
+    line-height: 1.5;
+    display: block;
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 981px) {
+    body {
+        background-attachment: fixed !important;
+        background-size: 20% 100vh !important;
+        background-position: top left !important;
+        background-repeat: no-repeat !important;
+    }
+    
+    #header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 100vh !important;
+        /* If the screen is short (like landscape), use smaller padding so it fits */
+        padding-top: clamp(2rem, 15vh, 15rem) !important; 
+        width: 20% !important; 
+        padding-left: 1.5rem !important; 
+        padding-right: 1.5rem !important;
+        background-size: cover !important;
+        overflow-y: auto !important; /* Allows scrolling inside sidebar if window is extremely short */
+    }
+
+    #main {
+        margin-left: 25% !important; 
+    }
+
+    #footer .icons {
+        position: fixed !important;
+        bottom: 80px !important;
+        left: 20px !important;
+        transform: none !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    #footer .copyright {
+        position: fixed !important;
+        bottom: 10px !important;
+        left: 20px !important;
+        text-align: left !important;
+        margin: 0 !important;
+    }
+}
+
+/* Project Tags Container */
+.project-tags {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0.5rem 0 1rem 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Restore the Pill Box and Original Font */
+.project-tags li {
+    display: inline-flex; /* Keeps icon and text side-by-side */
+    align-items: center; /* Centers them vertically */
+    gap: 0.5rem; /* Space between icon and text */
+    background-color: rgba(255, 255, 255, 0.08); /* Restores the dark background */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Restores the border */
+    color: #ffffff;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 20px; /* Fully rounded pill shape */
+    /* Removed the custom font so it uses your preferred template font */
+}
+
+/* Fix the Icon Sizing */
+.project-tags li i {
+    font-size: 1.2rem; /* Keeps the Devicons bold */
+    line-height: 1; /* Stops icons from adding weird vertical spacing */
+    display: inline-block; /* Fixes the text-wrapping bug */
+}
+
+/* Custom Floating Windows */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 3rem 4rem;
+    border-radius: 8px;
+    max-width: 1000px; /* Increased to make it wider */
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* Hide scrollbar for Chrome, Safari, and newer Edge */
+.modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox and older Edge/IE */
+.modal-content {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Alternating Project Layout */
+.project-split {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-split.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-split .image-box, 
+.project-split .text-box {
+    flex: 1; /* Ensures text and image take up exactly 50% each */
+}
+
+.project-split img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Stack normally on mobile screens */
+@media screen and (max-width: 768px) {
+    .project-split, .project-split.reverse {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #aaaaaa;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: #ffffff;
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #aaaaaa;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    z-index: 10;
+}
+
+.nav-arrow:hover {
+    color: #ffffff;
+}
+
+.left-arrow { left: 10px; }
+.right-arrow { right: 10px; }
+
+@media screen and (max-width: 768px) {
+    .modal-content { padding: 3rem 1.5rem; }
+    .left-arrow { left: 0px; }
+    .right-arrow { right: 0px; }
+}
+
+/* Custom Thumbnail Hover */
+.custom-thumb {
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.custom-thumb:hover {
+    opacity: 0.6;
+}
+
+/* Apply PT Serif exclusively to modal prose and headings */
+.modal-content h3,
+.modal-content h4,
+.modal-content p {
+    font-family: 'PT Serif', serif;
+}
